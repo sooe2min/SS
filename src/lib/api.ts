@@ -1,0 +1,43 @@
+import fs from 'fs'
+import { join } from 'path'
+import matter from 'gray-matter'
+
+// process.cwd() 워크스페이스의 절대 경로
+const postsDirectory = join(process.cwd(), 'content/posts')
+
+export const getPostSlugs = () => {
+	return fs.readdirSync(postsDirectory)
+}
+
+export const getPostBySlug: (slug: string, fields: string[]) => any = (
+	slug,
+	fields = []
+) => {
+	const _slug = slug.replace('.md', '')
+	const path = join(postsDirectory, `${slug}`)
+	const file = fs.readFileSync(path, 'utf-8')
+	const { data, content } = matter(file)
+
+	const items: Record<string, string> = {}
+
+	fields.forEach((field: string) => {
+		if (field === 'slug') {
+			items[field] = _slug
+		} else if (field === 'content') {
+			items[field] = content
+		} else if (field === 'date') {
+			items[field] = data.date.toString()
+		} else if (data[field]) {
+			items[field] = data[field]
+		}
+	})
+	return items
+}
+
+export const getAllPosts = (fields: string[] = []) => {
+	const slugs = getPostSlugs()
+	const posts = slugs
+		.map(slug => getPostBySlug(slug, fields))
+		.sort((post1, post2) => (post1.date > post2 ? 1 : -1))
+	return posts
+}
