@@ -1,6 +1,17 @@
+import { InferGetStaticPropsType } from 'next'
 import { getAllPosts } from '../lib/api'
+import Link from 'next/link'
 
-export default function Home({ posts }) {
+interface HomeProps {
+	slug: string
+	title: string
+	date: string
+	description: string
+}
+
+export default function Home({
+	posts
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<>
 			<aside className="fixed z-10 w-full h-full max-w-xs border-2 bg-gray-50 left-20">
@@ -31,8 +42,12 @@ export default function Home({ posts }) {
 											<div className="text-xs">{date[3]}</div>
 										</div>
 										<div className="flex flex-col px-5">
-											<div className="text-2xl font-semibold">
-												{post.title}
+											<div className="text-2xl font-semibold cursor-pointer">
+												<Link
+													href="/post/[slug]"
+													as={`/post/${post.slug}`}>
+													<a>{post.title}</a>
+												</Link>
 											</div>
 											<div className="text-base">{post.description}</div>
 										</div>
@@ -48,7 +63,12 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps({}) {
-	const posts: any = getAllPosts(['slug', 'title', 'date', 'description'])
+	const posts: HomeProps[] = getAllPosts([
+		'slug',
+		'title',
+		'date',
+		'description'
+	])
 	return {
 		props: { posts } // will be passed to the page component as props
 	}

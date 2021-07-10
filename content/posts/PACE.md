@@ -1,6 +1,6 @@
 ---
 title: 나만의 속도 (PACE)
-date: 2020-07-30T13:00:02
+date: 2020-07-30
 description: JavaScript, for, while, Array, Object
 ---
 

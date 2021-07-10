@@ -1,6 +1,6 @@
 ---
 title: 도망치는 건 답이 아니야 (AVOIDANCE)
-date: 2020-07-31T23:09:09
+date: 2020-07-31
 description: JavaScript, Weekend
 ---
 

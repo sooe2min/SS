@@ -14,9 +14,9 @@ export const getPostBySlug: (slug: string, fields: string[]) => any = (
 	fields = []
 ) => {
 	const _slug = slug.replace('.md', '')
-	const path = join(postsDirectory, `${slug}`)
-	const file = fs.readFileSync(path, 'utf-8')
-	const { data, content } = matter(file)
+	const filePath = join(postsDirectory, `${_slug}.md`)
+	const fileContents = fs.readFileSync(filePath, 'utf-8')
+	const { data, content } = matter(fileContents)
 
 	const items: Record<string, string> = {}
 
@@ -26,7 +26,7 @@ export const getPostBySlug: (slug: string, fields: string[]) => any = (
 		} else if (field === 'content') {
 			items[field] = content
 		} else if (field === 'date') {
-			items[field] = data.date.toString()
+			items[field] = data.date.toDateString()
 		} else if (data[field]) {
 			items[field] = data[field]
 		}
@@ -38,6 +38,10 @@ export const getAllPosts = (fields: string[] = []) => {
 	const slugs = getPostSlugs()
 	const posts = slugs
 		.map(slug => getPostBySlug(slug, fields))
-		.sort((post1, post2) => (post1.date > post2 ? 1 : -1))
+		.sort((post1: { date: string }, post2: { date: string }): number => {
+			return (
+				new Date(post2.date).valueOf() - new Date(post1.date).valueOf()
+			)
+		})
 	return posts
 }

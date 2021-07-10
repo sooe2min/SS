@@ -1,6 +1,6 @@
 ---
 title: 우분투 (UBUNTU)
-date: 2020-07-26T11:00:00
+date: 2020-07-26
 description: Ubuntu
 ---
 

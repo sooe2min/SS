@@ -1,6 +1,6 @@
 ---
 title: 잘하고 있습니다 (IT'S OKAY)
-date: 2020-07-28T07:30:00
+date: 2020-07-28
 description: JavaScript, Variable, Data Type, Function
 ---
 

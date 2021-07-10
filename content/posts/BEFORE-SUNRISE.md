@@ -1,6 +1,6 @@
 ---
 title: 해가 뜨기 전 새벽이 가장 어둡다 (BEFORE SUNRISE)
-date: 2020-07-30T07:00:00
+date: 2020-07-30
 description: JavaScript, if, String
 ---
 

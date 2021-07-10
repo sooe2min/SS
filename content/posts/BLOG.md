@@ -1,6 +1,6 @@
 ---
 title: 시작 (BLOG)
-date: 2020-07-26T13:00:00
+date: 2020-07-26
 description: Static Website, Gatsby, Github, Neflify
 ---
 

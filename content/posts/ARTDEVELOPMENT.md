@@ -1,6 +1,6 @@
 ---
 title: 감성과 이성 (ARTDEVELOPMENT)
-date: 2020-08-04T09:02:02
+date: 2020-08-04
 description: JavaScript, CLI, Git
 ---
 
