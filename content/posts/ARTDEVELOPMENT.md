@@ -4,12 +4,12 @@ date: 2020-08-04
 description: JavaScript, CLI, Git
 ---
 
+# 감성과 이성 (ARTDEVELOPMENT)
+
 ---
 
-해보다는 달. 새벽과 저녁이 집중이 잘 된다. 
+해보다는 달. 새벽과 저녁이 집중이 잘 된다.
 더 나은 세상을 위한 개발. 더 나은 나를 위한 예술.
-
----
 
 ## Command Line Interface
 
@@ -32,38 +32,15 @@ cp [file] [target_dir] 복사
 cp -r [folder] 복사
 sudo 관리자 권한
 chmod 모드 변경 (읽기, 쓰기, 실행 가능)
-chown owner:group file 파일 소유권 변경 
+chown owner:group file 파일 소유권 변경
 ```
 
 ## Git
 
 - Local Repository
-
 - Staging Area
-
-- Remote Repository
-
-  `git remote add 'URL'`
-
-  `git remote -v`
-
-  `git remote update`
-
-- Branching and Merging
-
-  `git merge <branch>`
-
+- Remote Repository <br/> `git remote add 'URL'` <br/> `git remote -v` <br/> `git remote update`
+- Branching and Merging <br/> `git merge <branch>`
 - `init`, `add`, `commit`, `push`, pull request
-
 - fork, `clone`
-
-- `pull`, `branch`
-
-  `git branch -r`
-  
-  `git branch -a`
-  
-  `git checkout -b <branch>`
-  
-  `git branch checkout -t <branch>`
-
+- `pull`, `branch` <br/> test message <br/> `git branch -r` <br/> `git branch -a` <br/> `git checkout -b <branch>` <br/> `git branch checkout -t <branch>`

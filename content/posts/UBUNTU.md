@@ -4,7 +4,13 @@ date: 2020-07-26
 description: Ubuntu
 ---
 
+# 우분투 (UBUNTU)
+
+---
+
 ## [Google Chrome](https://www.google.com/intl/ko/chrome/)
+
+크롬
 
 ## [mirror.kakao.com](http://mirror.kakao.com/ubuntu-releases/)
 
@@ -15,31 +21,30 @@ description: Ubuntu
 - `sudo apt install fcitx-hangul`
 - _Setting - Region & Language - Manage Installed Languages:_ **Install**
 - _Language Support - Keyboard input method system:_ **IBus -> fcitx**
-- _Fcitx Configuration - Add input method:_ **Hangul** 
+- _Fcitx Configuration - Add input method:_ **Hangul**
 - _Fcitx Configuration - Global Config - Trigger input Method:_ **Hangul, Shift+Space**
 - _Fcitx Configuration - Global Config - Extra key for trigger input method:_ **R_ALT**
 
 ## Git, Vim, curl, gnome-tweaks
 
-   ```bash
+```bash
 sudo apt-get update
 sudo apt-get install git vim curl gnome-tweaks
 sudo apt-get upgrade -y
 sudo apt-get autoremove -y
-   ```
+```
 
 - [GNOME Extention](https://extensions.gnome.org/)
-
 - Extensions / Dash to Dock / Ubuntu Dock / OpenWeather / User Themes
 
 ## zsh & oh-my-zsh
 
-   ```bash
-sudo apt install zsh -y 
-chsh -s `which zsh` 
-echo $SHELL 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"   
-   ```
+```bash
+sudo apt install zsh -y
+chsh -s `which zsh`
+echo $SHELL
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 - `.zshrc`: ZSH_THEME="random"
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -63,6 +68,6 @@ nvs link lts
 - Pinta
 - SimpleScreenRecorder
 - Typora
-- Visual Studio Code 
+- Visual Studio Code
 - Slack
 - Zoom

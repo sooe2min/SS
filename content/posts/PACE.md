@@ -4,11 +4,11 @@ date: 2020-07-30
 description: JavaScript, for, while, Array, Object
 ---
 
+# 나만의 속도 (PACE)
+
 ---
 
 뒤처지면 어때. 할 수 있는 걸 하는 거야. 페이스를 지키자.
-
----
 
 ## JavaScript
 
@@ -20,8 +20,7 @@ description: JavaScript, for, while, Array, Object
 
 ### Array [배열](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
-- `new Array(element0, element1[, ...[, elementN]])`
-  `new Array(arrayLength)`
+- `new Array(element0, element1[, ...[, elementN]])` <br/> `new Array(arrayLength)`
 - `arr[index]`
 - `arr.indexOf(searchElement[, fromIndex])`
 - `array.isArray(obj)`
@@ -40,25 +39,16 @@ description: JavaScript, for, while, Array, Object
 ### Object [객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 - `object['key'] = value`
-
 - `object.key = value`
-
-- `delete object.property`
-
-  `delete object['property']`
-  
+- `delete object.property` <br/> `delete object['property']`
 - `Object.keys(obj)` 키(문자열)를 배열로 반환
-
 - `Object.values(obj)` 값을 배열로 반환
-
 - `Object.entries(obj)` [키, 값] 쌍의 배열을 반환
-
 - `for (variable in object) {}`
-
 - `for (variable of iterable) {statement}`
 
 ## Issue & Keyword
 
-- 변수는 자유로운 놈이다. 변수는 갱신된다. 
+- 변수는 자유로운 놈이다. 변수는 갱신된다.
 - `for`, `while` 변수를 자유롭게 쓸 수 있다.
 - `for`, `while` 초기화, 증감문도 자유롭게 쓸 수 있다.

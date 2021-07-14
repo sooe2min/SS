@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul li::before {
+	content: '';
+	@apply absolute w-1.5 h-1.5 p-0.5 bg-gray-300 rounded-full left-1 top-2.5;
+}
+
+ol li::marker {
+	@apply text-gray-400;
+}
+
+:not(pre) code {
+	@apply bg-red-100 rounded-sm;
+}
+
+blockquote p {
+	@apply mb-0 !important;
+}

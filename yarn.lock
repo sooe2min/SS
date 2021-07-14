@@ -550,20 +550,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/typography@npm:^0.4.1":
-  version: 0.4.1
-  resolution: "@tailwindcss/typography@npm:0.4.1"
-  dependencies:
-    lodash.castarray: ^4.4.0
-    lodash.isplainobject: ^4.0.6
-    lodash.merge: ^4.6.2
-    lodash.uniq: ^4.5.0
-  peerDependencies:
-    tailwindcss: ">=2.0.0"
-  checksum: d26815b8f599631052e489ac1faa208a7c085304c9b023a2ea5e1eb4c6ceb52476fd7324854bbbc3768dc32992952c588f22f0bf8f7d5a8216ca8c9ccae30511
-  languageName: node
-  linkType: hard
-
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -2949,6 +2935,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight.js@npm:^11.1.0":
+  version: 11.1.0
+  resolution: "highlight.js@npm:11.1.0"
+  checksum: 5ea3b4b122084fa07292469fb3d57e23739e31f14eaf5dab039cd266db1f58ba5a289b771ee101988b5a317e9f87b50745ecd8c05a94400bc5add85e7c3f7e78
+  languageName: node
+  linkType: hard
+
 "hmac-drbg@npm:^1.0.1":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -3684,24 +3677,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.castarray@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "lodash.castarray@npm:4.4.0"
-  checksum: 45fb788a2e5a8550aab10ad1e057bbaf2c411734b06b249e87ad1243d39fa28543f249207fbf9c6e66f78a57cef0b187bbd3e2f84d7767593b5d944e6e6f5bcf
-  languageName: node
-  linkType: hard
-
 "lodash.clonedeep@npm:^4.5.0":
   version: 4.5.0
   resolution: "lodash.clonedeep@npm:4.5.0"
   checksum: 41e2fe4c57c56a66a4775a6ddeebe9272f0ce4d257d97b3cb8724a9b01eeec9b09ce7e8603d6926baf5f48c287d988f0de4bf5aa244ea86b1f22c1e6f203cc27
-  languageName: node
-  linkType: hard
-
-"lodash.isplainobject@npm:^4.0.6":
-  version: 4.0.6
-  resolution: "lodash.isplainobject@npm:4.0.6"
-  checksum: 72a114b610ec32a42b8cb47680d1729398caea0ee0631c0b220b97b21e7df19312377cb077acb6593bf6c5abdbdb43c530aa66b440e30d53324986d386808cd0
   languageName: node
   linkType: hard
 
@@ -3740,7 +3719,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.uniq@npm:4.5.0, lodash.uniq@npm:^4.5.0":
+"lodash.uniq@npm:4.5.0":
   version: 4.5.0
   resolution: "lodash.uniq@npm:4.5.0"
   checksum: 47cb25b59bf40ef3bdf441b7b6cb41d0b95ae0ca576be2c206724dd66041fa8aadab55c1210792671aa0b1c9878d5c0be48927bf4d22f3ed50e5f79d3b2e90b7
@@ -5298,7 +5277,6 @@ resolve@^2.0.0-next.3:
   version: 0.0.0-use.local
   resolution: "s2ss@workspace:."
   dependencies:
-    "@tailwindcss/typography": ^0.4.1
     "@types/node": ^16.3.0
     "@types/react": 17.0.13
     "@types/tailwindcss": ^2
@@ -5306,6 +5284,7 @@ resolve@^2.0.0-next.3:
     eslint: 7.30.0
     eslint-config-next: 11.0.1
     gray-matter: ^4.0.3
+    highlight.js: ^11.1.0
     next: 11.0.1
     next-mdx-remote: ^3.0.2
     postcss: latest

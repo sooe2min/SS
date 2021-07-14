@@ -43,9 +43,7 @@ export default function Home({
 										</div>
 										<div className="flex flex-col px-5">
 											<div className="text-2xl font-semibold cursor-pointer">
-												<Link
-													href="/post/[slug]"
-													as={`/post/${post.slug}`}>
+												<Link href={`/post/${post.slug}`}>
 													<a>{post.title}</a>
 												</Link>
 											</div>
