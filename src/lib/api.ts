@@ -3,7 +3,7 @@ import { join } from 'path'
 import matter from 'gray-matter'
 
 // process.cwd() 워크스페이스의 절대 경로
-const postsDirectory = join(process.cwd(), 'content/posts')
+const postsDirectory = join(process.cwd(), '/public/contents/posts')
 
 export const getPostSlugs = () => {
 	return fs.readdirSync(postsDirectory)

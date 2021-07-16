@@ -46,15 +46,9 @@ export const mdxComponents = {
 	hr: (props: any) => <hr className="my-11" {...props} />,
 
 	Image: ({ children, ...props }: { children: React.ReactNode }) => (
-		<figure className="w-full my-2">
-			<NextImage {...(props as any)} />
-			{children && (
-				<figcaption className="mt-2 text-sm text-gray-500">
-					{children}
-					{console.log(children, props)}
-				</figcaption>
-			)}
-		</figure>
+		<div className="relative w-full h-screen mb-5 ">
+			<NextImage className="" {...(props as any)} />
+		</div>
 	),
 
 	li: (props: any) => (
