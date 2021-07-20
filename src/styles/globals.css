@@ -11,8 +11,14 @@ ol li::marker {
 	@apply text-gray-400;
 }
 
+/* just code */
 :not(pre) code {
-	@apply bg-red-100 rounded-sm;
+	@apply p-1 text-sm bg-gray-100 rounded-sm;
+}
+
+/* code label */
+code div {
+	@apply w-full px-4 py-2 text-sm text-center bg-gray-100;
 }
 
 blockquote p {

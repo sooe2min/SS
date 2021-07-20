@@ -2,10 +2,11 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { InferGetStaticPropsType } from 'next'
 import { getAllPosts, getPostBySlug } from '../../lib/api'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import hljs from 'highlight.js'
+import { mdxComponents } from '../../components/mdxComponents'
 // import 'highlight.js/styles/base16/edge-light.css'
 // import 'highlight.js/styles/base16/equilibrium-gray-light.css'
 // import 'highlight.js/styles/base16/harmonic16-light.css'
@@ -14,9 +15,11 @@ import 'highlight.js/styles/base16/one-light.css'
 // import 'highlight.js/styles/base16/papercolor-light.css'
 import javascript from 'highlight.js/lib/languages/javascript'
 import bash from 'highlight.js/lib/languages/bash'
-import { mdxComponents } from '../../components/mdxComponents'
+import html from 'highlight.js/lib/languages/xml'
+
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('bash', bash)
+hljs.registerLanguage('html', html)
 
 interface PostProps {
 	slug: string
@@ -45,16 +48,33 @@ export default function Post({
 	matter,
 	source
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+	const [btnStatus, setBtnStatus] = useState<boolean>(false)
+
+	// const handleScroll = () => {
+	// 	sessionStorage.setItem('pageY', window.pageYOffset + '')
+
+	// 	if (window.pageYOffset > 900) {
+	// 		setBtnStatus(true)
+	// 	} else {
+	// 		setBtnStatus(false)
+	// 	}
+	// }
+
+	// useEffect(() => {
+	// 	window.addEventListener('scroll', handleScroll)
+	// 	return window.addEventListener('scroll', handleScroll)
+	// }, [handleScroll])
+
 	useEffect(() => {
 		hljs.highlightAll()
-	}, [])
+	})
 
 	return (
 		<>
 			<div className="flex justify-center">
 				<div className="flex flex-col w-full max-w-5xl border-yellow-500">
-					<div className="mt-5 border-t border-b border-black">
-						<nav className="flex justify-between font-bold text-white bg-white">
+					<nav className="mt-5 border-t border-b border-black">
+						<div className="flex justify-between font-bold text-white bg-white">
 							<div className="p-2 text-3xl text-black border-r border-black">
 								<div className="p-2 hover:bg-black hover:text-white">
 									<Link href="/" passHref>
@@ -80,8 +100,8 @@ export default function Post({
 									</div>
 								</div>
 							</div>
-						</nav>
-					</div>
+						</div>
+					</nav>
 
 					<main className="flex justify-between border-r border-black my-11">
 						<aside className="w-64 pt-6 pl-2 border-b border-black">
@@ -108,45 +128,6 @@ export default function Post({
 								#호기심 #탐구심 #언제나 왜? <br />
 							</p>
 							<hr className="w-12 my-4 border border-black" />
-							<div className="text-sm w-28">{matter.date}</div>
-							<div className="flex flex-wrap mt-2">
-								{matter.tags.split(',').map(tag => {
-									const _tag = tag.trim()
-									if (_tag === 'JavaScript') {
-										return (
-											<div
-												className="p-1 mb-2 mr-2 text-sm bg-yellow-100"
-												key={_tag}>
-												{_tag}
-											</div>
-										)
-									} else if (_tag === 'Algorithm') {
-										return (
-											<div
-												className="p-1 mb-2 mr-2 text-sm bg-pink-100"
-												key={_tag}>
-												{_tag}
-											</div>
-										)
-									} else {
-										return (
-											<div
-												className="p-1 mb-2 mr-2 text-sm border"
-												key={_tag}>
-												{_tag}
-											</div>
-										)
-									}
-								})}
-							</div>
-
-							<button
-								className="fixed top-4 left-4"
-								onClick={() => {
-									window.scrollTo(0, 0)
-								}}>
-								TOP
-							</button>
 						</aside>
 
 						<article className="w-full max-w-2xl mr-10 border-yellow-500">
@@ -154,8 +135,8 @@ export default function Post({
 								<h1 className="mb-0 text-4xl font-bold text-center">
 									{matter.title}
 								</h1>
-								<div className="flex items-center justify-center mt-2">
-									<div className="mr-4 text-sm text-gray-500">
+								<div className="flex flex-col items-center justify-center mt-2">
+									<div className="mb-2 text-sm text-gray-500">
 										{matter.date}
 									</div>
 									<div className="flex">
@@ -195,6 +176,24 @@ export default function Post({
 						</article>
 					</main>
 				</div>
+
+				{btnStatus && (
+					<button
+						className="fixed bottom-8 right-10"
+						onClick={() => {
+							window.scrollTo({
+								left: 0,
+								top: 0,
+								behavior: 'smooth'
+							})
+						}}>
+						<img
+							className="w-12"
+							src="/images/backtotop.png"
+							alt="backtotop"
+						/>
+					</button>
+				)}
 			</div>
 		</>
 	)

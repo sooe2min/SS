@@ -164,7 +164,7 @@ export const SearchInput = styled.input`
 
 `PlayerVideo` 컴포넌트는 `document.body` 엘리먼트의 자식으로 렌더링 된다.
 
-**`components/player/index.js`**
+<code><div>components/player/index.js</div></code>
 
 ```jsx
 Player.Video = function PlayerVideo({ src, ...restProps }) {
@@ -186,8 +186,9 @@ Player.Video = function PlayerVideo({ src, ...restProps }) {
 }
 ```
 
+<!--
 <details><summary><span style="background-color:#f5f2f0"><strong>브라우즈 페이지</strong></span></summary>
 
 ![browse](static/browse.png)
 
-</details>
+</details> -->
