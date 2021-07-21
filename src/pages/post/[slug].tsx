@@ -29,41 +29,25 @@ interface PostProps {
 	content: string
 }
 
-interface Params {
-	params: {
-		slug: string
-	}
-}
-
-interface Matter {
-	matter: {
-		slug: string
-		title: string
-		date: string
-		tags: string
-	}
-}
-
 export default function Post({
 	matter,
 	source
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	const [btnStatus, setBtnStatus] = useState<boolean>(false)
+	const handleScroll = () => {
+		sessionStorage.setItem('pageY', window.pageYOffset + '')
 
-	// const handleScroll = () => {
-	// 	sessionStorage.setItem('pageY', window.pageYOffset + '')
+		if (window.pageYOffset > 900) {
+			setBtnStatus(true)
+		} else {
+			setBtnStatus(false)
+		}
+	}
 
-	// 	if (window.pageYOffset > 900) {
-	// 		setBtnStatus(true)
-	// 	} else {
-	// 		setBtnStatus(false)
-	// 	}
-	// }
-
-	// useEffect(() => {
-	// 	window.addEventListener('scroll', handleScroll)
-	// 	return window.addEventListener('scroll', handleScroll)
-	// }, [handleScroll])
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll)
+		return () => window.addEventListener('scroll', handleScroll)
+	}, [handleScroll])
 
 	useEffect(() => {
 		hljs.highlightAll()
@@ -199,8 +183,10 @@ export default function Post({
 	)
 }
 
-export async function getStaticProps({ params }: Params) {
-	const post: PostProps = await getPostBySlug(params.slug, [
+export async function getStaticProps(ctx) {
+	console.log(ctx)
+
+	const post: PostProps = await getPostBySlug(ctx.params.slug, [
 		'slug',
 		'title',
 		'date',
@@ -208,6 +194,7 @@ export async function getStaticProps({ params }: Params) {
 		'content'
 	])
 	const { slug, title, date, tags, content } = post
+	// const matter: Matter = { slug, title, date, tags, content }
 	const mdxSource = await serialize(content, {
 		mdxOptions: {
 			remarkPlugins: [],
@@ -217,7 +204,7 @@ export async function getStaticProps({ params }: Params) {
 	})
 	return {
 		props: {
-			matter: { slug, title, date, tags },
+			matter: { slug, title, date, tags, content },
 			source: mdxSource
 		} // will be passed to the page component as props
 	}
