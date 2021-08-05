@@ -60,7 +60,7 @@ async function getAllPosts(fields: string[] = []) {
 		)
 
 		// initialize the index with your index name
-		const index: any = client.initIndex('s2ss_posts')
+		const index: any = client.initIndex('s2ss')
 
 		await index.clearObjects()
 		// save the objects!

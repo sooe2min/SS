@@ -15,11 +15,32 @@ module.exports = {
 			'4xl': '40px',
 			'5xl': '44px'
 		},
-
-		extend: {}
+		extend: {
+			maxWidth: {
+				736: '736px'
+			},
+			maxHeight: {
+				120: '30rem' /* 480px */
+			},
+			letterSpacing: {
+				'1px': '1px',
+				'1.5px': '1.5px'
+			},
+			backgroundColor: {
+				f5f5fa: '#f5f5fa'
+			},
+			textColor: {
+				'preview-500': '#9698c3',
+				'preview-600': '#777aaf',
+				'preview-700': '#5a5e9a',
+				'preview-800': '#484c7a'
+			}
+		}
 	},
 	variants: {
-		extend: {}
+		extend: {
+			display: ['hover', 'group-hover']
+		}
 	},
 	plugins: []
 }

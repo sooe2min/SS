@@ -409,6 +409,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.1.2":
+  version: 7.14.8
+  resolution: "@babel/runtime@npm:7.14.8"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: ebadb3e013a26e0f62abea0da6f6f5d83c9566f0d900e65069885f93088066c64586076d15dcbe6e093c536f66cffc9e2e136ad5d8b3e66235af62f0051afa42
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2":
   version: 7.14.6
   resolution: "@babel/runtime@npm:7.14.6"
@@ -770,6 +779,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-instantsearch-core@npm:*":
+  version: 6.10.4
+  resolution: "@types/react-instantsearch-core@npm:6.10.4"
+  dependencies:
+    "@types/react": "*"
+    algoliasearch: ">=4"
+    algoliasearch-helper: ">=3"
+  checksum: aefc21e912ddadb20534221653627a498710220929651825f4731e7c753d627ada4fb34a91e8d3d165fe14f05d832c3620d07f5e16c223278f7abe773bb6434d
+  languageName: node
+  linkType: hard
+
+"@types/react-instantsearch-dom@npm:^6":
+  version: 6.12.0
+  resolution: "@types/react-instantsearch-dom@npm:6.12.0"
+  dependencies:
+    "@types/react": "*"
+    "@types/react-instantsearch-core": "*"
+  checksum: bcccd2ff14e2f9e98ee66ea64471ffbe7ddce54ec4daf8d486258103011e3753fa822cd2bea3df5bfa0d291a84e5e4c9fa2ec8f5f7f57a296e048284e201d419
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*":
+  version: 17.0.14
+  resolution: "@types/react@npm:17.0.14"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 3c5373845b0869d9ce3db16917c87707cdfdb6c08d9ca7ed90a2a097cb3cbec8d037d37e81c3cf5af721d92f8fdc62431405f1874f9a02dea6ec05e5d81e77fe
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:17.0.13":
   version: 17.0.13
   resolution: "@types/react@npm:17.0.13"
@@ -961,7 +1002,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"algoliasearch@npm:^4.10.3":
+"algoliasearch-helper@npm:>=3, algoliasearch-helper@npm:^3.5.3":
+  version: 3.5.4
+  resolution: "algoliasearch-helper@npm:3.5.4"
+  dependencies:
+    events: ^1.1.1
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 5"
+  checksum: eed7c85336cf199bb34e25383ea8407a631f65c62e41843bb023682481a298c5106dc6c708dbb04132c054c098ac66298cfb0ea1f14ffa5c23f60ecce52fe0ed
+  languageName: node
+  linkType: hard
+
+"algoliasearch@npm:>=4, algoliasearch@npm:^4.10.3":
   version: 4.10.3
   resolution: "algoliasearch@npm:4.10.3"
   dependencies:
@@ -1647,6 +1699,13 @@ __metadata:
   version: 2.2.6
   resolution: "classnames@npm:2.2.6"
   checksum: 490eaeca5931846737ffd33e472a701d268d5b8bc5717dd4cf108a127b06e86e05350e06799abbbe763a0e4c945b4217f6700b7ae00ddc703505682c370e5cf2
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.2.5":
+  version: 2.3.1
+  resolution: "classnames@npm:2.3.1"
+  checksum: 57d536edede609f81425d24b062d8d720a466565faf1e38d32c881e883920baa71519ac70c7b565e9cd39201fb1c1ff9bdf8aabf8e26544bac481e7924867c83
   languageName: node
   linkType: hard
 
@@ -2583,6 +2642,13 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: f18341a3c12a554ec46c0d4756bc9cae177e92f25a4ebd9ceefebf0ee448b675972fc110879f22b1bf514174713921ae5de9ff77af2062d422b1085588465a57
+  languageName: node
+  linkType: hard
+
+"events@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "events@npm:1.1.1"
+  checksum: ec57b605851d6c4421fb2b0c86af432e87dd94b8b8cd936d74383a19e66a0d7e4af27f6a946ad49dad7e9c66000f3b16ef33e38ec12e31dc69d1b36321bc00ce
   languageName: node
   linkType: hard
 
@@ -4979,7 +5045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.7.2, prop-types@npm:^15.7.2":
+"prop-types@npm:15.7.2, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -5133,6 +5199,45 @@ __metadata:
   peerDependencies:
     react: 17.0.2
   checksum: 960a74ff6670766846a73097a599115963df1574833c59ca0c2fd909758ebe7a6214cd14f5e6aa63ce846d8f39fde7f3b80474ccfcfadc45dd7f3246364718c6
+  languageName: node
+  linkType: hard
+
+"react-fast-compare@npm:^3.0.0":
+  version: 3.2.0
+  resolution: "react-fast-compare@npm:3.2.0"
+  checksum: 6fe65c889eb4f326e97769135f97b3d63ac68737866f9c37f9625c9de4f5eaa9abed6f748eb3fd6a66808392118842916309cab7cfa99c67991f0c837433d6d2
+  languageName: node
+  linkType: hard
+
+"react-instantsearch-core@npm:^6.12.0":
+  version: 6.12.0
+  resolution: "react-instantsearch-core@npm:6.12.0"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    algoliasearch-helper: ^3.5.3
+    prop-types: ^15.6.2
+    react-fast-compare: ^3.0.0
+  peerDependencies:
+    algoliasearch: ">= 3.1 < 5"
+    react: ">= 16.3.0 < 18"
+  checksum: c0ae43248e3ea47684ec71db87db946a9acccdea4638c15feb513643e668abe77b341ae20ebcca66beeeea3409e4bed472f54cb8fb2f74971658d61b4cd3fba1
+  languageName: node
+  linkType: hard
+
+"react-instantsearch-dom@npm:^6.12.0":
+  version: 6.12.0
+  resolution: "react-instantsearch-dom@npm:6.12.0"
+  dependencies:
+    "@babel/runtime": ^7.1.2
+    algoliasearch-helper: ^3.5.3
+    classnames: ^2.2.5
+    prop-types: ^15.6.2
+    react-fast-compare: ^3.0.0
+    react-instantsearch-core: ^6.12.0
+  peerDependencies:
+    react: ">= 16.3.0 < 18"
+    react-dom: ">= 16.3.0 < 18"
+  checksum: dc5d7d96486f441b39819758bac382d7e5abd534052f6b37c6a4d0fdfea8f3c34410f03687ab0190c5738519aa7bce7bd2ba5b9cd0e6dba0be576980e1d149c4
   languageName: node
   linkType: hard
 
@@ -5440,6 +5545,7 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@types/node": ^16.3.0
     "@types/react": 17.0.13
+    "@types/react-instantsearch-dom": ^6
     "@types/tailwindcss": ^2
     algoliasearch: ^4.10.3
     autoprefixer: latest
@@ -5453,6 +5559,7 @@ resolve@^2.0.0-next.3:
     postcss: latest
     react: 17.0.2
     react-dom: 17.0.2
+    react-instantsearch-dom: ^6.12.0
     tailwindcss: latest
     ts-node: ^10.0.0
     typescript: 4.3.5

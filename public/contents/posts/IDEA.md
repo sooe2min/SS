@@ -102,11 +102,10 @@ Redux용 React 바인딩은 **presentational 컴포넌트와 container 컴포넌
 #### 컴포넌트 구현하기[#](https://ko.redux.js.org/basics/usage-with-react/#컴포넌트-구현하기)
 
 1. Presentational Component 구현하기
-
 2. Container 컴포넌트 구현하기
 
-   이제 위에서 만들었던 presentational 컴포넌트를 Redux와 연결해줄 시간입니다. 이를 위해 몇 개의 container 컴포넌트를 만들 것입니다. 여러분이 container 컴포넌트를 직접 작성할 수도 있지만, 그 대신 React Redux 라이브러리에 내장된 `connect()` 함수를 통해 container 컴포넌트를 생성하는 것을 추천합니다.
+이제 위에서 만들었던 presentational 컴포넌트를 Redux와 연결해줄 시간입니다. 이를 위해 몇 개의 container 컴포넌트를 만들 것입니다. 여러분이 container 컴포넌트를 직접 작성할 수도 있지만, 그 대신 React Redux 라이브러리에 내장된 `connect()` 함수를 통해 container 컴포넌트를 생성하는 것을 추천합니다.
 
-   `connect()`를 사용하려면, `mapStateToProps`라 불리는 특별한 함수를 정의해야 합니다. 이 함수에는 현재 Redux 저장소의 상태를 어떻게 변형할지, 그리고 어떤 속성을 통해 presentational 컴포넌트로 넘겨줄 지를 서술하면 됩니다.
+`connect()`를 사용하려면, `mapStateToProps`라 불리는 특별한 함수를 정의해야 합니다. 이 함수에는 현재 Redux 저장소의 상태를 어떻게 변형할지, 그리고 어떤 속성을 통해 presentational 컴포넌트로 넘겨줄 지를 서술하면 됩니다.
 
-   상태를 읽어오는 일 외에, container 컴포넌트는 저장소에 액션을 보낼 수 있습니다. 위와 비슷한 방식으로 `mapDispatchToProps()` 함수를 정의하면 되는데, 이 함수는 [`dispatch()`](https://ko.redux.js.org/api/store#dispatch) 메소드를 인자로 받습니다. 이 함수가 콜백으로 이루어진 속성들을 반환하도록 만들어주면, presentational 컴포넌트에 이 속성들이 주입됩니다.
+상태를 읽어오는 일 외에, container 컴포넌트는 저장소에 액션을 보낼 수 있습니다. 위와 비슷한 방식으로 `mapDispatchToProps()` 함수를 정의하면 되는데, 이 함수는 [`dispatch()`](https://ko.redux.js.org/api/store#dispatch) 메소드를 인자로 받습니다. 이 함수가 콜백으로 이루어진 속성들을 반환하도록 만들어주면, presentational 컴포넌트에 이 속성들이 주입됩니다.

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import hljs from 'highlight.js'
-import { mdxComponents } from '../../components/mdxComponents'
+import { MdxComponents } from '../../components/MdxComponents'
 // import 'highlight.js/styles/base16/edge-light.css'
 // import 'highlight.js/styles/base16/equilibrium-gray-light.css'
 // import 'highlight.js/styles/base16/harmonic16-light.css'
@@ -47,48 +47,41 @@ export default function Post({
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll)
 		return () => window.addEventListener('scroll', handleScroll)
-	}, [handleScroll])
+	})
 
 	useEffect(() => {
 		hljs.highlightAll()
+		return () => hljs.highlightAll()
 	})
 
 	return (
 		<>
-			<div className="flex justify-center">
-				<div className="flex flex-col w-full max-w-5xl border-yellow-500">
-					<nav className="mt-5 border-t border-b border-black">
-						<div className="flex justify-between font-bold text-white bg-white">
-							<div className="p-2 text-3xl text-black border-r border-black">
-								<div className="p-2 hover:bg-black hover:text-white">
-									<Link href="/" passHref>
-										<a>SPACE STATION</a>
-									</Link>
-								</div>
-							</div>
-
-							<div className="flex">
-								<div className="flex items-center text-2xl border-l border-black">
-									<div className="p-2 text-black">
-										<div className="p-2 hover:bg-black hover:text-white">
-											<a>PLAYLIST</a>
-										</div>
-									</div>
-								</div>
-
-								<div className="flex items-center text-2xl border-l border-black">
-									<div className="p-2 text-black">
-										<div className="p-2 hover:bg-black hover:text-white">
-											<a>NAV2</a>
-										</div>
-									</div>
-								</div>
-							</div>
+			{/* <div className="flex flex-col w-full"> */}
+			<header>
+				<div className="flex justify-between max-w-5xl mx-auto mt-5 text-3xl font-bold border-t border-b border-black">
+					<div className="p-2 text-black border-r border-black w-72">
+						<div className="p-2 hover:bg-black hover:text-white">
+							<Link href="/" passHref>
+								<a>SPACE STATION</a>
+							</Link>
 						</div>
+					</div>
+					<nav className="flex border-l border-black">
+						<ul className="p-2 text-black">
+							<li className="p-2 hover:bg-black hover:text-white">
+								<Link href="/" passHref>
+									<a>PLAYLIST</a>
+								</Link>
+							</li>
+						</ul>
 					</nav>
+				</div>
+			</header>
 
-					<main className="flex justify-between border-r border-black my-11">
-						<aside className="w-64 pt-6 pl-2 border-b border-black">
+			<main>
+				<div className="flex w-full max-w-5xl mx-auto my-11">
+					<aside>
+						<div className="h-full pt-6 pl-2 border-b border-black w-72">
 							<div className="relative w-24 h-24">
 								<Image
 									className="rounded-full"
@@ -97,7 +90,7 @@ export default function Post({
 									objectFit="cover"
 								/>
 							</div>
-							<div className="mt-2 w-52">
+							<div className="mt-2">
 								<p className="text-lg">
 									Soomin Jang <br />
 								</p>
@@ -107,15 +100,17 @@ export default function Post({
 								</p>
 							</div>
 							<hr className="w-12 my-4 border border-black" />
-							<p className="break-normal w-52">
+							<p className="break-normal w-72">
 								#JavsScript #프론트엔드 <br />
 								#호기심 #탐구심 #언제나 왜? <br />
 							</p>
 							<hr className="w-12 my-4 border border-black" />
-						</aside>
+						</div>
+					</aside>
 
-						<article className="w-full max-w-2xl mr-10 border-yellow-500">
-							<div className="max-w-2xl text-black">
+					<article>
+						<div className="h-full px-4 text-black border-r border-black max-w-736">
+							<section className="introduction">
 								<h1 className="mb-0 text-4xl font-bold text-center">
 									{matter.title}
 								</h1>
@@ -123,30 +118,26 @@ export default function Post({
 									<div className="mb-2 text-sm text-gray-500">
 										{matter.date}
 									</div>
-									<div className="flex">
+									<div className="flex text-sm">
 										{matter.tags.split(',').map(tag => {
 											const _tag = tag.trim()
 											if (_tag === 'JavaScript') {
 												return (
 													<div
-														className="p-1 mr-2 text-sm bg-yellow-100"
+														className="p-1 mr-2 bg-yellow-100"
 														key={_tag}>
 														{_tag}
 													</div>
 												)
 											} else if (_tag === 'Algorithm') {
 												return (
-													<div
-														className="p-1 mr-2 text-sm bg-pink-100"
-														key={_tag}>
+													<div className="p-1 mr-2 bg-pink-100" key={_tag}>
 														{_tag}
 													</div>
 												)
 											} else {
 												return (
-													<div
-														className="p-1 mr-2 text-sm border"
-														key={_tag}>
+													<div className="p-1 mr-2 border" key={_tag}>
 														{_tag}
 													</div>
 												)
@@ -155,37 +146,38 @@ export default function Post({
 									</div>
 								</div>
 								<hr className="my-11" />
-								<MDXRemote {...source} components={mdxComponents} />
-							</div>
-						</article>
-					</main>
+							</section>
+							<section className="contents">
+								<MDXRemote {...source} components={MdxComponents} />
+							</section>
+						</div>
+					</article>
 				</div>
+			</main>
+			{/* </div> */}
 
-				{btnStatus && (
-					<button
-						className="fixed bottom-8 right-10"
-						onClick={() => {
-							window.scrollTo({
-								left: 0,
-								top: 0,
-								behavior: 'smooth'
-							})
-						}}>
-						<img
-							className="w-12"
-							src="/images/backtotop.png"
-							alt="backtotop"
-						/>
-					</button>
-				)}
-			</div>
+			{btnStatus && (
+				<button
+					className="fixed bottom-8 right-10"
+					onClick={() => {
+						window.scrollTo({
+							left: 0,
+							top: 0,
+							behavior: 'smooth'
+						})
+					}}>
+					<img
+						className="w-12"
+						src="/images/backtotop.png"
+						alt="backtotop"
+					/>
+				</button>
+			)}
 		</>
 	)
 }
 
 export async function getStaticProps(ctx) {
-	console.log(ctx)
-
 	const post: PostProps = await getPostBySlug(ctx.params.slug, [
 		'slug',
 		'title',

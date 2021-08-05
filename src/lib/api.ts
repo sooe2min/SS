@@ -36,8 +36,6 @@ export const getPostBySlug: (slug: string, fields: string[]) => any = (
 
 export const getAllPosts = (fields: string[] = []) => {
 	const slugs = getPostSlugs()
-	console.log(slugs)
-
 	const posts = slugs
 		.map(slug => getPostBySlug(slug, fields))
 		.sort((post1: { date: string }, post2: { date: string }): number => {

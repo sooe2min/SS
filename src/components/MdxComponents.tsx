@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import NextImage from 'next/image'
 
-export const mdxComponents = {
+export const MdxComponents = {
 	a: ({ href = '', ...props }: any) => (
 		<Link href={href} passHref>
 			<a
-				target="_blank"
 				className="underline hover:bg-red-100"
+				target="_blank"
 				{...props}
 			/>
 		</Link>
@@ -24,7 +24,14 @@ export const mdxComponents = {
 	),
 
 	h2: (props: any) => (
-		<h2 className="mt-12 mb-2 text-3xl font-medium" {...props} />
+		<h2 className="relative mt-12 mb-2 text-3xl font-medium pl-7 -ml-7 group">
+			{props.children}
+			<a
+				className="absolute inset-0 opacity-0 group-hover:opacity-100 group-hover:text-yellow-200"
+				id={`${props.children}`}>
+				#
+			</a>
+		</h2>
 	),
 
 	h3: (props: any) => (
