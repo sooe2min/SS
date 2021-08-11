@@ -2,42 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-ul li::before {
-	content: '';
-	@apply absolute w-1.5 h-1.5 p-0.5 bg-gray-300 rounded-full left-1 top-2.5;
+li ul {
+	@apply mt-[8px] ml-[18px];
 }
 
-ol li ul li::before {
-	content: '';
-	@apply absolute w-1.5 h-1.5 p-0.5 bg-gray-300 rounded-full left-1 top-2.5;
-}
-
-ol li::marker {
-	@apply text-gray-400;
-}
-
-ul li ol li::before {
-	all: unset;
-}
-
-ol > li {
-	@apply pl-0 !important;
-}
-
-li ul li {
-	@apply pl-5 ml-4;
+li ol {
+	@apply mt-[8px] ml-[18px];
 }
 
 /* just code */
-:not(pre) code {
+/* code {
 	@apply p-1 text-sm bg-gray-100 rounded-sm;
-}
+} */
 
 /* code label */
-code div {
+/* code div {
 	@apply w-full px-4 py-2 text-sm text-center bg-gray-100;
-}
+} */
 
-blockquote p {
+/* blockquote p {
 	@apply mb-0 !important;
-}
+} */

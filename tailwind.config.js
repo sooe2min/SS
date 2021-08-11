@@ -1,7 +1,8 @@
 module.exports = {
+	mode: 'jit',
 	purge: [
-		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx}'
+		'./src/pages/**/*.{js,ts,jsx,tsx}',
+		'./src/components/**/*.{js,ts,jsx,tsx}'
 	],
 	darkMode: false, // or 'media' or 'class'
 	theme: {
@@ -16,16 +17,6 @@ module.exports = {
 			'5xl': '44px'
 		},
 		extend: {
-			maxWidth: {
-				736: '736px'
-			},
-			maxHeight: {
-				120: '30rem' /* 480px */
-			},
-			letterSpacing: {
-				'1px': '1px',
-				'1.5px': '1.5px'
-			},
 			backgroundColor: {
 				f5f5fa: '#f5f5fa'
 			},

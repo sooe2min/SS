@@ -45,7 +45,6 @@ tags: JavaScript
    ```
 
 5. 편의를 위해 npm `scripts` 필드를 작성한다.
-
    - `tsc -watch(w)`: 컴파일러를 감시 모드로 실행한다. 감시하고 있는 파일이 변경될 때마다 자동으로 다시 컴파일하고 `tsconfig.json` 파일의 `outDir` 폴더를 갱신한다.
    - `nodemon`: 디렉토리 파일 변경을 감지하고 자동으로 다시 시작한다.
 

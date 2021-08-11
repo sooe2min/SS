@@ -27,22 +27,22 @@ export default function Home({
 		<>
 			{/* <div className="flex flex-col w-full"> */}
 			<header>
-				<div className="flex justify-between max-w-3xl mx-auto mt-5 text-3xl font-bold border-t border-b border-black">
-					<div className="p-2 text-black border-r border-black w-72">
-						<div className="p-2 hover:bg-black hover:text-white">
+				<div className="flex justify-between max-w-[768px] mx-auto mt-[20px] text-[32px] font-bold border-t border-b border-black">
+					<div className="p-[8px] text-black border-r border-black w-[288px]">
+						<div className="p-[8px] hover:bg-black hover:text-white">
 							{/* <Link href="" passHref> */}
 							SPACE STATION
 							{/* </Link> */}
 						</div>
 					</div>
 					<button
-						className="p-4 border-l-2 border-r-2 border-yellow-300"
+						className="p-[16px] border-l-[2px] border-r-[2px] border-yellow-300"
 						onClick={() => setModal(true)}>
 						search
 					</button>
 					<nav className="flex border-l border-black">
-						<ul className="p-2 text-black">
-							<li className="p-2 hover:bg-black hover:text-white">
+						<ul className="p-[8px] text-black">
+							<li className="p-[8px] hover:bg-black hover:text-white">
 								{/* <Link href="" passHref> */}
 								<a>PLAYLIST</a>
 								{/* </Link> */}
@@ -53,7 +53,7 @@ export default function Home({
 			</header>
 
 			<figure>
-				<div className="relative w-full max-w-3xl mx-auto h-80">
+				<div className="relative w-full max-w-[768px] mx-auto h-[320px]">
 					<Image
 						className=""
 						src="/images/hubble2004.jpg"
@@ -65,30 +65,32 @@ export default function Home({
 			</figure>
 
 			<main>
-				<div className="mt-5">
+				<div className="mt-[20px]">
 					{posts.map(post => {
 						const date = post.date.split(' ')
 						return (
 							<article key={post.slug}>
-								<div className="flex max-w-3xl mx-auto mb-5 border-t border-b border-black">
-									<div className="flex flex-col items-center w-24 py-3 text-black bg-white border-r border-black">
-										<div className="text-xs">{date[1]}</div>
-										<div className="text-2xl leading-7">{date[2]}</div>
-										<div className="text-xs">{date[3]}</div>
+								<div className="flex max-w-[768px] mx-auto mb-[20px] border-t border-b border-black">
+									<div className="flex flex-col items-center w-[96px] py-[12px] text-black bg-white border-r border-black">
+										<div className="text-[14px]">{date[1]}</div>
+										<div className="text-[20px] leading-[26px]">
+											{date[2]}
+										</div>
+										<div className="text-[14px]">{date[3]}</div>
 									</div>
-									<div className="flex flex-col justify-center max-w-xl px-5 py-3 break-normal">
-										<h2 className="text-2xl font-normal cursor-pointer">
+									<div className="flex flex-col justify-center max-w-[576px] px-[20px] py-[12px] break-normal">
+										<h2 className="text-[24px] cursor-pointer">
 											<Link href={`/post/${post.slug}`}>
 												<a>{post.title}</a>
 											</Link>
 										</h2>
-										<div className="flex mt-1 text-sm">
+										<div className="flex mt-[4px] text-[14px]">
 											{post.tags.split(',').map(tag => {
 												const _tag = tag.trim()
 												if (_tag === 'JavaScript') {
 													return (
 														<div
-															className="p-1 mr-2 bg-yellow-100"
+															className="p-[4px] mr-[8px] bg-yellow-100"
 															key={_tag}>
 															{_tag}
 														</div>
@@ -96,14 +98,16 @@ export default function Home({
 												} else if (_tag === 'Algorithm') {
 													return (
 														<div
-															className="p-1 mr-2 bg-pink-100"
+															className="p-[4px] mr-[8px] bg-pink-100"
 															key={_tag}>
 															{_tag}
 														</div>
 													)
 												} else {
 													return (
-														<div className="p-1 mr-2 border" key={_tag}>
+														<div
+															className="p-[4px] mr-[8px] border"
+															key={_tag}>
 															{_tag}
 														</div>
 													)
@@ -119,9 +123,9 @@ export default function Home({
 			</main>
 
 			{modal ? (
-				<div className="fixed inset-0 flex flex-col items-center max-w-5xl mx-auto mt-5">
+				<div className="fixed inset-0 flex flex-col items-center max-w-[1024px] mx-auto mt-[20px]">
 					<div
-						className="fixed inset-0 z-0 bg-purple-100 bg-opacity-30"
+						className="fixed inset-0 z-0 bg-purple-100/30"
 						onClick={() => setModal(false)}></div>
 					<div className="z-10 w-full shadow-lg">
 						<Search />

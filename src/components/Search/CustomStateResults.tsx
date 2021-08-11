@@ -54,9 +54,9 @@ const CustomStateResults: React.FC<CustomStateResultsProps> = ({
 	return (
 		<div className="">
 			{searchResults?.hits.length > 0 && validQuery && (
-				<div className="flex bg-white max-h-120">
+				<div className="flex bg-white max-h-[480px]">
 					<div className="w-1/2 overflow-y-auto">
-						<div className="px-4 py-1 text-sm font-semibold uppercase bg-f5f5fa tracking-1px">
+						<div className="px-[16px] py-[4px] text-[14px] font-semibold uppercase bg-f5f5fa tracking-[1px]">
 							posts
 						</div>
 
@@ -72,7 +72,7 @@ const CustomStateResults: React.FC<CustomStateResultsProps> = ({
 									}}>
 									<Link href={`/post/${hit.slug}`} passHref>
 										<a
-											className="flex items-center justify-between px-4 py-1 hover:bg-yellow-200"
+											className="flex items-center justify-between px-[16px] py-[4px] hover:bg-yellow-200"
 											target="_self">
 											<div>
 												<div>{hit.title}</div>
@@ -107,7 +107,7 @@ const CustomStateResults: React.FC<CustomStateResultsProps> = ({
 													})}
 												</div> */}
 											</div>
-											<div className="w-5 p-0.5 hidden group-hover:block">
+											<div className="w-[20px] p-[2px] hidden group-hover:block">
 												<svg
 													fill="none"
 													viewBox="0 0 24 24"
@@ -127,18 +127,18 @@ const CustomStateResults: React.FC<CustomStateResultsProps> = ({
 					</div>
 
 					<div className="w-1/2 overflow-y-auto">
-						<div className="flex flex-col w-full h-full py-4 text-sm text-center shadow-inner px-14 bg-f5f5fa bg-opacity-60">
+						<div className="flex flex-col w-full h-full py-[16px] text-[14px] text-center shadow-inner px-[56px] bg-f5f5fa/60">
 							<div className="text-preview-700">
 								<Highlight hit={hit} attribute={'tags'} tagName={'mark'} />
 							</div>
-							<div className="p-2 text-2xl font-bold text-black">
+							<div className="p-[8px] text-[24px] font-bold text-black">
 								<Highlight
 									hit={hit}
 									attribute={'title'}
 									tagName={'mark'}
 								/>
 							</div>
-							<div className="my-4 text-preview-800">
+							<div className="my-[16px] text-preview-800">
 								<Snippet
 									hit={hit}
 									attribute={'content'}
@@ -146,15 +146,15 @@ const CustomStateResults: React.FC<CustomStateResultsProps> = ({
 								/>
 							</div>
 							{headings.length > 0 ? (
-								<div className="mt-6 text-left">
-									<h2 className="tracking-1.5px text-preview-500 font-semibold ">
+								<div className="mt-[24px] text-left">
+									<h2 className="tracking-[1.5px] text-preview-500 font-semibold ">
 										ON THIS PAGE
 									</h2>
 									<ol className="list-decimal list-inside">
 										{headings.map((heading: string) => (
 											// console.log(typeof heading.slice(2))
 											<li
-												className="py-2 my-1 leading-relaxed border-b border-gray-600 border-solid text-preview-600 hover:text-preview-800 border-opacity-10"
+												className="py-[8px] my-[4px] leading-relaxed border-b border-gray-600/10 border-solid text-preview-600 hover:text-preview-800"
 												key={heading}
 												onClick={() => {
 													const body = document.body

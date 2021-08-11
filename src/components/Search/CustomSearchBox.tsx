@@ -9,7 +9,7 @@ const CustomSearchBox: React.FC<CustomSearchBoxProps> = ({ refine }) => {
 	return (
 		<div className="relative flex">
 			<svg
-				className="absolute text-yellow-200 w-7 h-7 top-7 left-4"
+				className="absolute text-yellow-200 w-[28px] h-[28px] top-[28px] left-[16px]"
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ const CustomSearchBox: React.FC<CustomSearchBoxProps> = ({ refine }) => {
 				/>
 			</svg>
 			<input
-				className="w-full px-16 text-lg outline-none py-7"
+				className="w-full px-[64px] text-[20px] outline-none py-[28px]"
 				autoFocus
 				type="search"
 				placeholder="search"

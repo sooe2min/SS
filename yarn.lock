@@ -772,6 +772,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prismjs@npm:^1":
+  version: 1.16.6
+  resolution: "@types/prismjs@npm:1.16.6"
+  checksum: fdc3f2d3e718821c8cb8babc210b780bd99395275f1b5011a9230bd3a5e3d46c57bf745213376a1423ec27cf22eca97b617cc1f17a83aebdf345c55ea41f95c9
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.3
   resolution: "@types/prop-types@npm:15.7.3"
@@ -3162,13 +3169,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.1.0":
-  version: 11.1.0
-  resolution: "highlight.js@npm:11.1.0"
-  checksum: 5ea3b4b122084fa07292469fb3d57e23739e31f14eaf5dab039cd266db1f58ba5a289b771ee101988b5a317e9f87b50745ecd8c05a94400bc5add85e7c3f7e78
-  languageName: node
-  linkType: hard
-
 "hmac-drbg@npm:^1.0.1":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -5007,6 +5007,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prismjs@npm:^1.24.1":
+  version: 1.24.1
+  resolution: "prismjs@npm:1.24.1"
+  checksum: 337ce5e07815b38aa8e2b71aa64dc821c1dbe38c5dba9451b0c210c19c139cc01145914920e222ae0f54b45e65523c3863899d0c7f19cdec202a03ccd268a09b
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -5544,6 +5551,7 @@ resolve@^2.0.0-next.3:
   resolution: "s2ss@workspace:."
   dependencies:
     "@types/node": ^16.3.0
+    "@types/prismjs": ^1
     "@types/react": 17.0.13
     "@types/react-instantsearch-dom": ^6
     "@types/tailwindcss": ^2
@@ -5553,10 +5561,10 @@ resolve@^2.0.0-next.3:
     eslint: 7.30.0
     eslint-config-next: 11.0.1
     gray-matter: ^4.0.3
-    highlight.js: ^11.1.0
     next: 11.0.1
     next-mdx-remote: ^3.0.2
     postcss: latest
+    prismjs: ^1.24.1
     react: 17.0.2
     react-dom: 17.0.2
     react-instantsearch-dom: ^6.12.0

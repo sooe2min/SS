@@ -13,7 +13,7 @@ tags: JavaScript, CLI, Git
 
 ## Command Line Interface
 
-```bash
+```shell
 ls 파일 보기
 cd 디렉터리 이동
 cd ~ 홈
