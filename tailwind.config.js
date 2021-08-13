@@ -17,6 +17,9 @@ module.exports = {
 			'5xl': '44px'
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Gothic A1', 'Nanum Gothic', 'Noto Sans KR']
+			},
 			backgroundColor: {
 				f5f5fa: '#f5f5fa'
 			},
