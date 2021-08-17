@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { InferGetStaticPropsType } from 'next'
-import { getAllPosts, getPostBySlug } from '../../lib/api'
+import { getPosts, getPostByFileName } from '../../lib/api'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -163,7 +163,7 @@ export default function Post({
 }
 
 export async function getStaticProps(ctx) {
-	const post: PostProps = await getPostBySlug(ctx.params.slug, [
+	const post: PostProps = await getPostByFileName(ctx.params.slug, [
 		'slug',
 		'title',
 		'date',
@@ -188,7 +188,7 @@ export async function getStaticProps(ctx) {
 }
 
 export async function getStaticPaths() {
-	const paths = getAllPosts(['slug']).map(post => {
+	const paths = getPosts(['slug']).map(post => {
 		return {
 			params: {
 				slug: post.slug

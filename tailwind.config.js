@@ -18,7 +18,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Gothic A1', 'Nanum Gothic', 'Noto Sans KR']
+				sans: ['Gothic A1', 'Nanum Gothic'],
+				serif: ['Noto Sans KR']
 			},
 			backgroundColor: {
 				f5f5fa: '#f5f5fa'
