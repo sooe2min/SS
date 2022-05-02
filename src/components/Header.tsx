@@ -1,19 +1,18 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Header() {
 	return (
 		<>
 			<header className="sticky flex justify-center text-[16px] top-0 z-[10]">
-				<div className="max-w-[764px] w-full flex items-center justify-between py-[8px] font-extrabold bg-black/20 px-[16px]">
-					<div className="p-1 bg-black">
-						<div className="p-1 bg-white">
-							<div className="p-2 text-white bg-black">
-								{/* <Link href="" passHref> */}
-								SooMIN JANG
-								{/* </Link> */}
+				<div className="max-w-[700px] w-full flex items-center justify-between py-[8px] font-extrabold bg-black/5 px-[16px]">
+					<Link href="/" passHref>
+						<div className="p-1 bg-black cursor-pointer">
+							<div className="p-1 bg-white">
+								<div className="p-2 text-white bg-black">SooMIN JANG</div>
 							</div>
 						</div>
-					</div>
+					</Link>
 
 					<nav>
 						<ul className="flex">

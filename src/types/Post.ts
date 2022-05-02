@@ -1,3 +1,3 @@
-export interface Post {
+export default interface IPost {
 	[key: string]: string
 }

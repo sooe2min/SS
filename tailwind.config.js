@@ -21,15 +21,15 @@ module.exports = {
 				sans: ['Gothic A1', 'Nanum Gothic'],
 				serif: ['Noto Sans KR']
 			},
-			backgroundColor: {
-				f5f5fa: '#f5f5fa'
-			},
-			textColor: {
-				'preview-500': '#9698c3',
-				'preview-600': '#777aaf',
-				'preview-700': '#5a5e9a',
-				'preview-800': '#484c7a'
-			}
+			typography: theme => ({
+				DEFAULT: {
+					css: {
+						color: theme('colors.gray.800')
+
+						// ...
+					}
+				}
+			})
 		}
 	},
 	variants: {

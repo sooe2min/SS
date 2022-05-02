@@ -16,7 +16,7 @@ export default function Main(props: { posts: any }) {
 					/>
 				</figure>
 
-				<section className="max-w-[764px] w-full mt-[287px] bg-white mb-[32px]">
+				<section className="max-w-[700px] w-full mt-[287px] bg-white mb-[32px]">
 					<div className="h-full p-[16px] w-full">
 						<header className="flex mb-3">
 							<div className="relative w-[125px] h-[125px]">
@@ -83,7 +83,7 @@ export default function Main(props: { posts: any }) {
 					</div>
 				</section>
 
-				<section className="max-w-[764px] w-full">
+				<section className="max-w-[700px] w-full">
 					<div className="flex border-t justify-center text-[16px] items-center">
 						<div
 							className={
@@ -111,8 +111,6 @@ export default function Main(props: { posts: any }) {
 						</div>
 					</div>
 					{props.posts.map((post: any) => {
-						const date = post.date.split(' ')
-
 						return (
 							<article
 								key={post.slug}

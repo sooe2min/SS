@@ -30,12 +30,13 @@ export const getPostItemsByFileName = (
 	const items: { [key: string]: string } = {}
 
 	fields.forEach(field => {
+		const date = data.date.toDateString().split(' ')
 		if (field === 'slug') {
 			items[field] = slug
 		} else if (field === 'content') {
 			items[field] = content
 		} else if (field === 'date') {
-			items[field] = data.date.toDateString()
+			items[field] = date
 		} else if (data[field]) {
 			items[field] = data[field]
 		}

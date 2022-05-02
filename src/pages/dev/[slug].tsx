@@ -1,5 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import React, { useEffect, useState } from 'react'
+import rehypeHighlight from 'rehype-highlight'
 import rehypeReact from 'rehype-react'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
@@ -9,8 +10,8 @@ import Header from '../../components/Header'
 import { getAllPosts, getPostItemsByFileName } from '../../lib/api'
 
 export default function Post({
-	blog
-}): InferGetStaticPropsType<typeof getStaticProps> {
+	post
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	const [btnStatus, setBtnStatus] = useState<boolean>(false)
 	const [content, setContent] = useState<any>()
 	const handleScroll = () => {
@@ -24,14 +25,15 @@ export default function Post({
 	}
 
 	useEffect(() => {
-		const htmlContent = unified()
+		const unifiedContent = unified()
 			.use(remarkParse)
 			.use(remarkRehype)
 			.use(rehypeStringify)
+			.use(rehypeHighlight)
 			.use(rehypeReact, { createElement: React.createElement })
-			.processSync(blog.content).result
-		console.log(htmlContent)
-		setContent(htmlContent)
+			// .use(rehypeMinifyWhitespace)
+			.processSync(post.content).result
+		setContent(unifiedContent)
 	}, [])
 
 	useEffect(() => {
@@ -44,19 +46,19 @@ export default function Post({
 			<Header />
 
 			<main className="flex justify-center">
-				<article className="h-full px-[16px] text-black border-black max-w-[764px] w-full">
-					<section>
-						<h1 className="mt-[48px] text-[40px] font-bold text-center">
-							{blog?.title}
+				<article className="h-full text-black border-black max-w-[700px] w-full">
+					<section className="flex justify-between mt-[48px]">
+						<h1 className="text-[40px] font-bold whitespace-pre-line">
+							{post?.title}
 						</h1>
-						<div className="flex flex-col items-center justify-center mt-[8px]">
-							<div className="mb-[8px] text-[14px] text-gray-500">
-								{blog?.date}
-							</div>
+						<div className="text-[20px] font-extrabold min-w-[70px] self-center text-right">
+							{`${post?.date[1]} ${post?.date[2].replace(/^0/gi, '')}`}
 						</div>
-						<hr className="my-[48px]" />
 					</section>
-					<section className="prose mx-auto">{content}</section>
+					<hr className="my-[48px]" />
+					<section className="prose max-w-full mb-[48px]">
+						{content}
+					</section>
 				</article>
 			</main>
 
@@ -82,19 +84,16 @@ export default function Post({
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
-	const post: any = await getPostItemsByFileName(ctx.params?.slug, [
+	const post = await getPostItemsByFileName(ctx.params?.slug, [
 		'slug',
 		'title',
 		'date',
 		'tags',
 		'content'
 	])
-	const { slug, title, date, tags, content } = post
 
 	return {
-		props: {
-			blog: { slug, title, date, tags, content }
-		} // will be passed to the page component as props
+		props: { post } // will be passed to the page component as props
 	}
 }
 
@@ -107,8 +106,5 @@ export async function getStaticPaths() {
 		}
 	})
 
-	return {
-		paths,
-		fallback: false
-	}
+	return { paths, fallback: false }
 }
