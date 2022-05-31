@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li ul {
+	@apply mt-[8px] ml-[18px];
+}
+
+li ol {
+	@apply mt-[8px] ml-[18px];
+}
