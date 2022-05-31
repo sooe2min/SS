@@ -1,10 +1,8 @@
 module.exports = {
-	mode: 'jit',
-	purge: [
+	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx}',
 		'./src/components/**/*.{js,ts,jsx,tsx}'
 	],
-	darkMode: false, // or 'media' or 'class'
 	theme: {
 		fontSize: {
 			xs: '12px',
@@ -30,11 +28,6 @@ module.exports = {
 					}
 				}
 			})
-		}
-	},
-	variants: {
-		extend: {
-			display: ['hover', 'group-hover']
 		}
 	},
 	plugins: [require('@tailwindcss/typography')]

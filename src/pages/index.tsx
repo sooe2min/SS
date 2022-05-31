@@ -1,17 +1,11 @@
 import { InferGetStaticPropsType } from 'next'
-import Header from '../components/Header'
-import Main from '../components/Main'
+import Header from '../components/header'
 import { getAllPosts } from '../lib/api'
 
 export default function Home({
 	posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	return (
-		<div className="flex flex-col pb-[72px]">
-			<Header></Header>
-			<Main posts={posts} />
-		</div>
-	)
+	return <Header />
 }
 
 export async function getStaticProps({}) {
