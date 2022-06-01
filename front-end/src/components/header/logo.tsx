@@ -6,8 +6,8 @@ export default function Logo() {
 			<Image
 				className="rounded-full"
 				src="/profile-pic.jpg"
-				width="100px"
-				height="100px"
+				width="95px"
+				height="95px"
 			/>
 			<h2 className="tracking-widest underline underline-offset-[8px] decoration-[1px]">
 				SooMIN JANG

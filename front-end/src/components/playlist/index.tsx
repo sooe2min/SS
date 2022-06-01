@@ -1,17 +1,17 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { TrackI } from '../../types'
 
 export default function Playlist() {
-	const [tracks, setTracks] = useState<any>([])
+	const [tracks, setTracks] = useState<TrackI[]>([])
 
 	useEffect(() => {
 		async function getTracks() {
 			const response = await fetch('http://localhost:1337/api/tracks')
 
 			if (response.ok) {
-				const tracks = await response.json()
-				setTracks(tracks)
-				console.log(tracks)
+				const { data } = await response.json()
+				setTracks(data)
 			} else {
 				alert('HTTP-Error: ' + response.status)
 			}
@@ -24,11 +24,12 @@ export default function Playlist() {
 		<main>
 			{}
 			<div className="grid grid-cols-7 m-auto items-center">
-				{tracks.data &&
-					tracks.data.map(track => {
+				{tracks &&
+					tracks.map(track => {
 						const { cover_hash } = track.attributes
 						return (
 							<Image
+								key={track.id}
 								src={`http://localhost:1337/uploads/${cover_hash}`}
 								width="280px"
 								height="280px"
