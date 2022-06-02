@@ -1,6 +1,6 @@
 export default function Nav() {
 	return (
-		<nav>
+		<nav className="hidden md:block">
 			<ul className="flex space-x-6 tracking-widest">
 				<li className="flex items-center space-x-[2px]">
 					{/* <Link href="" passHref> */}

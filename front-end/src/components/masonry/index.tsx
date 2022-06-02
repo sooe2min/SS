@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { TrackI } from '../../types'
 
-export default function Playlist() {
+export default function Masonry() {
 	const [tracks, setTracks] = useState<TrackI[]>([])
 
 	useEffect(() => {
@@ -22,17 +22,16 @@ export default function Playlist() {
 
 	return (
 		<main>
-			{}
-			<div className="grid grid-cols-7 m-auto items-center">
+			<div className="grid md:grid-cols-4 lg:grid-cols-7">
 				{tracks &&
 					tracks.map(track => {
 						const { cover_hash } = track.attributes
 						return (
 							<Image
-								key={track.id}
 								src={`http://localhost:1337/uploads/${cover_hash}`}
-								width="280px"
-								height="280px"
+								layout="responsive"
+								width="100%"
+								height="100%"
 							/>
 						)
 					})}

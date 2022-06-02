@@ -1,6 +1,6 @@
 import { InferGetStaticPropsType } from 'next'
 import Header from '../components/header'
-import Playlist from '../components/playlist'
+import Masonry from '../components/masonry'
 import { getAllPosts } from '../lib/api'
 
 export default function Home({
@@ -9,7 +9,7 @@ export default function Home({
 	return (
 		<>
 			<Header />
-			<Playlist />
+			<Masonry />
 		</>
 	)
 }
