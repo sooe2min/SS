@@ -4,7 +4,7 @@
   "info": {
     "singularName": "track",
     "pluralName": "tracks",
-    "displayName": "track",
+    "displayName": "Track",
     "description": ""
   },
   "options": {
@@ -32,13 +32,16 @@
     "album_name": {
       "type": "string"
     },
-    "video_url": {
+    "video_id": {
       "type": "string"
     },
     "release_date": {
       "type": "date"
     },
     "cover_hash": {
+      "type": "string"
+    },
+    "cover_url": {
       "type": "string"
     }
   }
