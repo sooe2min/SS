@@ -4,6 +4,11 @@ module.exports = {
 		scrollRestoration: true
 	},
 	images: {
-		domains: ['localhost']
+		domains: [
+			'localhost',
+			'img.youtube.com',
+			'musicmeta-phinf.pstatic.net',
+			'f4.bcbits.com'
+		]
 	}
 }

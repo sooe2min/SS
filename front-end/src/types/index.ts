@@ -2,12 +2,13 @@ export interface AttributesI {
 	album_name: string
 	artists: string
 	cover_hash: string
+	cover_url: string
 	createdAt: string
 	name: string
 	publishedAt: string
 	release_date: string
 	updatedAt: string
-	video_url: string
+	video_id: string
 }
 
 export interface TrackI {
