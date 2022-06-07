@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-export default function useGetPathName() {
+export default function useGetRouter() {
 	const router = useRouter()
 
-	return router.pathname
+	return router
 }

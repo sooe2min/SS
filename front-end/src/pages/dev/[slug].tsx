@@ -6,7 +6,7 @@ import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
-import Header from '../../components/header'
+import Header from '../../components/Header'
 import { getAllPosts, getPostItemsByFileName } from '../../lib/api'
 
 export default function Post({

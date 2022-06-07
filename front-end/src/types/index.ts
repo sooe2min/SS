@@ -1,3 +1,9 @@
+import { ReactNode } from 'react'
+
+export interface ChildrenI {
+	children: ReactNode
+}
+
 export interface AttributesI {
 	album_name: string
 	artists: string
@@ -12,8 +18,12 @@ export interface AttributesI {
 }
 
 export interface TrackI {
-	attributes: AttributesI
-	id: number
+	attributes: AttributesI | undefined
+	id: number | undefined
+}
+
+export interface TracksI {
+	tracks: TrackI[]
 }
 
 export interface IPost {

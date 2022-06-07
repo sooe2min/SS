@@ -1,9 +1,10 @@
 import { InferGetStaticPropsType } from 'next'
-import Header from '../components/header'
-import Masonry from '../components/masonry'
+import React from 'react'
+import Header from '../components/Header'
+import Masonry from '../components/Masonry'
 import { getAllPosts } from '../lib/api'
 
-export default function Home({
+export default function HomePage({
 	posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (

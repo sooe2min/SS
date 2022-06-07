@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "track_name": {
       "type": "string"
     },
     "artists": {
