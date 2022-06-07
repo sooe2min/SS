@@ -2,9 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-export default function Brick({ videoId }: { videoId: string }) {
+export default function Brick({
+	trackId,
+	videoId
+}: {
+	trackId: number | undefined
+	videoId: string
+}) {
 	return (
-		<Link href={`/playlist/${videoId}`}>
+		<Link href={`/playlist/${trackId}/${videoId}`}>
 			<a className="relative group">
 				<Image
 					className="group-hover:blur-[2px]"

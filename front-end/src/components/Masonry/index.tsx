@@ -25,7 +25,11 @@ export default function Masonry() {
 			<div className="grid md:grid-cols-2 lg:grid-cols-[repeat(4,_1fr)]">
 				{tracks &&
 					tracks.map(track => (
-						<Brick key={track.id} videoId={track.attributes!.video_id} />
+						<Brick
+							key={track.id}
+							trackId={track.id}
+							videoId={track.attributes!.video_id}
+						/>
 					))}
 			</div>
 		</main>
