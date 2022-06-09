@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export interface ChildrenI {
+export type Children = {
 	children: ReactNode
 }
 
@@ -10,7 +10,7 @@ export interface AttributesI {
 	cover_hash: string
 	cover_url: string
 	createdAt: string
-	name: string
+	track_name: string
 	publishedAt: string
 	release_date: string
 	updatedAt: string

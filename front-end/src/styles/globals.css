@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-li ul {
-	@apply mt-[8px] ml-[18px];
+html {
+	font-size: 62.5%;
 }
 
-li ol {
-	@apply mt-[8px] ml-[18px];
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+
+.react-datepicker-wrapper {
+	width: auto !important;
 }

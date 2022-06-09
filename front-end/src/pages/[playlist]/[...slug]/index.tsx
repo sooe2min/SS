@@ -1,45 +1,56 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../../components/Header'
+import MusicPlayer from '../../../components/MusicPlayer'
+import MusicInfo from '../../../components/MusicPlayer/MusicInfo'
+import MusicMenuButton from '../../../components/MusicPlayer/MusicMenuButton'
 import MusicVideo from '../../../components/MusicVideo'
+import Playlist from '../../../components/Playlist'
 import useGetRouter from '../../../hooks/useGetRouter'
 import { TrackI } from '../../../types'
 
 export default function PlayListPage() {
 	const { query } = useGetRouter()
 	const [track, setTrack] = useState<TrackI>()
+	const [isPlayList, setIsPlayList] = useState(false)
 
-	useEffect(() => {
-		async function getTrack() {
-			let trackId
-			if (query && query.slug) {
-				trackId = +query.slug[0]
-			}
-
+	const getTrack = async () => {
+		if (query && query.slug) {
 			const response = await fetch(
-				`http://localhost:1337/api/tracks/${trackId}`
+				`http://localhost:1337/api/tracks/${query.slug[0]}`
 			)
 
 			if (response.ok) {
 				const { data } = await response.json()
-
 				setTrack(prev => ({
 					...prev,
-					attributes: data.attributes,
-					id: data.id
+					attributes: data?.attributes,
+					id: data?.id
 				}))
 			} else {
 				alert('HTTP-Error: ' + response.status)
 			}
 		}
+	}
 
+	const onClick = () => {
+		setIsPlayList(true)
+	}
+
+	useEffect(() => {
 		getTrack()
 	}, [])
 
 	return (
 		<>
-			<Header />
-			<MusicVideo attributes={track?.attributes} id={track?.id} />
-			{/* <Playlist tracks={tracks}></Playlist> */}
+			{/* <Header /> */}
+			<MusicVideo />
+			{isPlayList ? (
+				<Playlist />
+			) : (
+				<MusicPlayer>
+					<MusicInfo attributes={track?.attributes} id={track?.id} />
+					<MusicMenuButton onClick={onClick} />
+				</MusicPlayer>
+			)}
 		</>
 	)
 }

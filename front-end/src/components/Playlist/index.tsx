@@ -1,7 +1,3 @@
-import { TracksI } from '../../types'
-
-export default function Playlist({ tracks }: TracksI) {
-	// console.log(tracks)
-
+export default function Playlist() {
 	return <aside></aside>
 }
