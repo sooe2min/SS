@@ -31,7 +31,7 @@ export default function PlayListPage() {
 		}
 	}
 
-	const onClick = () => {
+	const handleClick = () => {
 		setIsPlayList(true)
 	}
 
@@ -48,7 +48,7 @@ export default function PlayListPage() {
 			) : (
 				<MusicPlayer>
 					<MusicInfo attributes={track?.attributes} id={track?.id} />
-					<MusicMenuButton onClick={onClick} />
+					<MusicMenuButton onClick={handleClick} />
 				</MusicPlayer>
 			)}
 		</>

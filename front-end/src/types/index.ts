@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type Children = {
+export interface Children {
 	children: ReactNode
 }
 
