@@ -1,25 +1,28 @@
 import Image from 'next/image'
-import { TrackI } from '../../types'
+import { AttributesI } from '../../types'
 
-export default function MusicInfo({ attributes, id }: TrackI) {
+export default function MusicInfo({
+	cover_url,
+	track_name,
+	artists
+}: AttributesI) {
 	return (
 		<div className="md:space-x-4 flex items-center">
-			<div className="md:w-[45px] md:block hidden md:h-[45px] w-[40px] h-[40px]">
+			<div className="md:w-[45px] md:block md:h-[45px] hidden">
 				<Image
-					className="rounded-md"
-					src={attributes ? attributes!.cover_url : '/profile-pic.jpg'}
+					src={cover_url || '/profile-pic.jpg'}
 					layout="responsive"
 					width="100%"
 					height="100%"
 				/>
 			</div>
 			<div>
-				<p className="text-white text-[16px] font-semibold">
-					{attributes ? attributes!.track_name : ''}
-				</p>
-				<p className="text-[#747474] text-[14px]">
-					{attributes ? attributes!.artists.split(',')[0] : ''}
-				</p>
+				<em className="md:text-[16px] text-white text-[18px] font-semibold block not-italic">
+					{track_name}
+				</em>
+				<span className="md:text-[14px] text-[#747474] text-[16px]">
+					{artists?.split(',')[0]}
+				</span>
 			</div>
 		</div>
 	)

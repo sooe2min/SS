@@ -1,8 +1,4 @@
-export default function MusicMenuButton({
-	onClick
-}: {
-	onClick: () => void
-}) {
+export default function MusicMenu({ onClick }: { onClick: () => void }) {
 	return (
 		<div className="md:space-x-8 flex space-x-6 items-center">
 			<svg
@@ -12,15 +8,6 @@ export default function MusicMenuButton({
 				xmlns="http://www.w3.org/2000/svg">
 				<path
 					d="M1.79 2.093A.5.5 0 001 2.5v10a.5.5 0 00.79.407l7-5a.5.5 0 000-.814l-7-5zM13 13h1V2h-1v11z"
-					fill="currentColor"></path>
-			</svg>
-			<svg
-				className="md:w-[35px] md:h-[35px] text-white w-[30px] h-[30px]"
-				viewBox="0 0 15 15"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M4.79 2.093A.5.5 0 004 2.5v10a.5.5 0 00.79.407l7-5a.5.5 0 000-.814l-7-5z"
 					fill="currentColor"></path>
 			</svg>
 			<svg
