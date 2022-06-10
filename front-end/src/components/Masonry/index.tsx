@@ -27,8 +27,8 @@ export default function Masonry() {
 					tracks.map(track => (
 						<Brick
 							key={track.id}
-							trackId={track.id}
-							videoId={track.attributes!.video_id}
+							attributes={track.attributes}
+							id={track.id}
 						/>
 					))}
 			</div>

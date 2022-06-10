@@ -30,7 +30,7 @@ export default function PlayListPage() {
 
 	useEffect(() => {
 		getTrack()
-	}, [])
+	}, [query])
 
 	return (
 		<>

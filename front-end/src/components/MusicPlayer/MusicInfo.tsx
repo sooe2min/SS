@@ -20,7 +20,7 @@ export default function MusicInfo({
 				<em className="md:text-[16px] text-white text-[18px] font-semibold block not-italic">
 					{track_name}
 				</em>
-				<span className="md:text-[14px] text-[#747474] text-[16px]">
+				<span className="md:text-[15px] text-[#747474] text-[16px]">
 					{artists?.split(',')[0]}
 				</span>
 			</div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import useGetRouter from '../../hooks/useGetRouter'
 import { TrackI } from '../../types'
 import PlayListInfo from './PlayListInfo'
 
@@ -7,6 +8,7 @@ export default function Playlist({
 }: {
 	showPlayList: boolean
 }) {
+	const { query } = useGetRouter()
 	const [tracks, setTracks] = useState<TrackI[]>([])
 
 	useEffect(() => {
@@ -26,20 +28,23 @@ export default function Playlist({
 
 	return (
 		<div
-			className={`flex bg-[#111] fixed inset-0 bottom-[8vh] z-20 h-[calc(100%-8vh)] overflow-y-scroll ${
-				showPlayList ? 'visible' : 'hidden'
+			className={`bg-[#111] fixed inset-0 bottom-[8vh] z-20 h-[calc(100%-8vh)] overflow-y-scroll ${
+				showPlayList ? 'md:flex' : 'hidden'
 			}`}>
-			<section className="cover_section"></section>
+			<section className="md:visible cover_section hidden"></section>
 			<section className="playlist_section">
-				<div className="p-10">
-					<div className="pb-3">
-						<h2 className="text-white text-[20px] font-bold">PLAYLIST</h2>
+				<div className="py-10">
+					<div className="pb-3 px-8">
+						<h2 className="md:text-[20px] text-white text-[24px] font-bold">
+							PLAYLIST
+						</h2>
 					</div>
 					<ul className="flex flex-col">
 						{tracks &&
 							tracks.map(track => {
 								return (
 									<PlayListInfo
+										slug={query.slug && query.slug[0]}
 										attributes={track.attributes}
 										id={track.id}
 									/>

@@ -1,20 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { TrackI } from '../../types'
 
-export default function Brick({
-	trackId,
-	videoId
-}: {
-	trackId: number | undefined
-	videoId: string
-}) {
+export default function Brick({ attributes, id }: TrackI) {
 	return (
-		<Link href={`/playlist/${trackId}/${videoId}`}>
+		<Link href={`/playlist/${id}/${attributes?.video_id}`}>
 			<a className="relative group">
 				<Image
 					className="group-hover:blur-[2px]"
-					src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+					src={`https://img.youtube.com/vi/${attributes?.video_id}/maxresdefault.jpg`}
 					layout="responsive"
 					width="160%"
 					height="90%"
